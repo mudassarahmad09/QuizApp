@@ -10,10 +10,11 @@ import UIKit
 class QuestionViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    private var question: String = ""
-    private var options: [String] = []
+    private var question = ""
+    private var options = [String]()
+    private let reuseIdentifier = "Cell"
     
-    convenience init(question: String,options: [String]) {
+    convenience init(question: String, options: [String]) {
         self.init()
         self.question = question
         self.options = options
@@ -31,8 +32,15 @@ extension QuestionViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = dequeueCell(in: tableView)
         cell.textLabel?.text = options[indexPath.row]
+        return cell
+    }
+    
+    func dequeueCell(in tableView: UITableView) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) else {
+            return UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+        }
         return cell
     }
 }
