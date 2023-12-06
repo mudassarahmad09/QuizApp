@@ -21,6 +21,7 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
         headerLabel.text = question
     }
 }
