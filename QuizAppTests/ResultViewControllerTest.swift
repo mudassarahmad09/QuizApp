@@ -19,18 +19,32 @@ class ResultViewControllerTest: XCTestCase {
     }
     
     func test_viewDidLoad_withOneAnswer_renderOneAnswer() {
-        let sut = makeSUT(answer: [makeAnswer()])
+        let sut = makeSUT(answer: [makeDummyAnswer()])
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
     }
     
     func test_viewDidLoad_withCorrectAnswers_renderCorrectAnswerCell() {
-        let sut = makeSUT(answer: [PresentableAnswer(isCorrect: true)])
+        let sut = makeSUT(answer: [makeAnswer(isCorrect: true)])
         let cell = sut.tableView.cell(at: 0) as? CorrectAnswerCell
         XCTAssertNotNil(cell)
     }
     
+    func test_viewDidLoad_withCorrectAnswers_renderQuestionText() {
+        let answer = makeAnswer(question: "Q1", isCorrect: true)
+        let sut = makeSUT(answer: [answer])
+        let cell = sut.tableView.cell(at: 0) as! CorrectAnswerCell
+        XCTAssertEqual(cell.questionLabel.text, "Q1")
+    }
+    
+    func test_viewDidLoad_withCorrectAnswers_renderAnswerText() {
+        let answer = makeAnswer(answer: "A1", isCorrect: true)
+        let sut = makeSUT(answer: [answer])
+        let cell = sut.tableView.cell(at: 0) as! CorrectAnswerCell
+        XCTAssertEqual(cell.answerLabel.text, "A1")
+    }
+    
     func test_viewDidLoad_withWorngAnswers_renderWorngAnswerCell() {
-        let sut = makeSUT(answer: [PresentableAnswer(isCorrect: false)])
+        let sut = makeSUT(answer: [makeAnswer(isCorrect: false)])
         let cell = sut.tableView.cell(at: 0) as? WorngAnswerCell
         XCTAssertNotNil(cell)
     }
@@ -42,7 +56,11 @@ class ResultViewControllerTest: XCTestCase {
         return sut
     }
     
-    func makeAnswer() -> PresentableAnswer   {
-        PresentableAnswer(isCorrect: false)
+    func makeDummyAnswer() -> PresentableAnswer   {
+        makeAnswer(isCorrect: false)
+    }
+    
+    func makeAnswer(question: String = "", answer: String = "", isCorrect: Bool) -> PresentableAnswer {
+        PresentableAnswer(question: question, answer: answer, isCorrect: isCorrect)
     }
 }
