@@ -19,6 +19,7 @@
 		803067042B21FAAC00336277 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803067032B21FAAC00336277 /* ResultViewController.xib */; };
 		80727CB72B220D1B009CD539 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727CB62B220D1B009CD539 /* TableViewHelper.swift */; };
 		80727CB92B22182A009CD539 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80727CB82B22182A009CD539 /* CorrectAnswerCell.xib */; };
+		80727CBB2B2250C8009CD539 /* WorngAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80727CBA2B2250C8009CD539 /* WorngAnswerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		803067032B21FAAC00336277 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		80727CB62B220D1B009CD539 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 		80727CB82B22182A009CD539 /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
+		80727CBA2B2250C8009CD539 /* WorngAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorngAnswerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				803067012B21F9B800336277 /* ResultViewController.swift */,
 				803067032B21FAAC00336277 /* ResultViewController.xib */,
 				80727CB82B22182A009CD539 /* CorrectAnswerCell.xib */,
+				80727CBA2B2250C8009CD539 /* WorngAnswerCell.xib */,
 				801C480A2B209B25003E4493 /* Assets.xcassets */,
 				801C480C2B209B25003E4493 /* LaunchScreen.storyboard */,
 				801C480F2B209B25003E4493 /* Info.plist */,
@@ -197,6 +200,7 @@
 				801C480E2B209B25003E4493 /* LaunchScreen.storyboard in Resources */,
 				801C480B2B209B25003E4493 /* Assets.xcassets in Resources */,
 				801C48372B209F62003E4493 /* QuestionViewController.xib in Resources */,
+				80727CBB2B2250C8009CD539 /* WorngAnswerCell.xib in Resources */,
 				80727CB92B22182A009CD539 /* CorrectAnswerCell.xib in Resources */,
 				803067042B21FAAC00336277 /* ResultViewController.xib in Resources */,
 			);

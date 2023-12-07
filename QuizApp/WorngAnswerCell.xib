@@ -39,8 +39,8 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="corretAnswerLabel" destination="uXS-wg-pfJ" id="pzi-Sp-f0d"/>
-                <outlet property="questionLabel" destination="Ic6-dN-dqa" id="Mwd-K3-ylW"/>
+                <outlet property="corretAnswerLabel" destination="uXS-wg-pfJ" id="RF5-cX-GOO"/>
+                <outlet property="questionLabel" destination="Ic6-dN-dqa" id="YCE-zN-7wW"/>
             </connections>
             <point key="canvasLocation" x="287.78625954198475" y="21.126760563380284"/>
         </tableViewCell>

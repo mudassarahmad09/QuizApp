@@ -22,31 +22,29 @@ class ResultViewControllerTest: XCTestCase {
         let sut = makeSUT(answer: [makeDummyAnswer()])
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
     }
-    
-    func test_viewDidLoad_withCorrectAnswers_renderCorrectAnswerCell() {
-        let sut = makeSUT(answer: [makeAnswer(isCorrect: true)])
+        
+    func test_viewDidLoad_withCorrectAnswers_configureCell() {
+        let answer = makeAnswer(question: "Q1", answer: "A1", isCorrect: true)
+        let sut = makeSUT(answer: [answer])
         let cell = sut.tableView.cell(at: 0) as? CorrectAnswerCell
         XCTAssertNotNil(cell)
-    }
-    
-    func test_viewDidLoad_withCorrectAnswers_renderQuestionText() {
-        let answer = makeAnswer(question: "Q1", isCorrect: true)
-        let sut = makeSUT(answer: [answer])
-        let cell = sut.tableView.cell(at: 0) as! CorrectAnswerCell
-        XCTAssertEqual(cell.questionLabel.text, "Q1")
-    }
-    
-    func test_viewDidLoad_withCorrectAnswers_renderAnswerText() {
-        let answer = makeAnswer(answer: "A1", isCorrect: true)
-        let sut = makeSUT(answer: [answer])
-        let cell = sut.tableView.cell(at: 0) as! CorrectAnswerCell
-        XCTAssertEqual(cell.answerLabel.text, "A1")
+        XCTAssertEqual(cell?.questionLabel.text, "Q1")
+        XCTAssertEqual(cell?.answerLabel.text, "A1")
     }
     
     func test_viewDidLoad_withWorngAnswers_renderWorngAnswerCell() {
         let sut = makeSUT(answer: [makeAnswer(isCorrect: false)])
         let cell = sut.tableView.cell(at: 0) as? WorngAnswerCell
         XCTAssertNotNil(cell)
+    }
+    
+    func test_viewDidLoad_withWorngAnswers_configureCell() {
+        let answer = makeAnswer(question: "Q1", answer: "A1", isCorrect: false)
+        let sut = makeSUT(answer: [answer])
+        let cell = sut.tableView.cell(at: 0) as? WorngAnswerCell
+        XCTAssertNotNil(cell)
+        XCTAssertEqual(cell?.questionLabel.text, "Q1")
+        XCTAssertEqual(cell?.corretAnswerLabel.text, "A1")
     }
     
     // MARK: Helper
