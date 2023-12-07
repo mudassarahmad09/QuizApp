@@ -25,15 +25,13 @@ class ResultViewControllerTest: XCTestCase {
     
     func test_viewDidLoad_withCorrectAnswers_renderCorrectAnswerCell() {
         let sut = makeSUT(answer: [PresentableAnswer(isCorrect: true)])
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.tableView.dataSource?.tableView(sut.tableView, cellForRowAt: indexPath) as? CorrectAnswerCell
+        let cell = sut.tableView.cell(at: 0) as? CorrectAnswerCell
         XCTAssertNotNil(cell)
     }
     
     func test_viewDidLoad_withWorngAnswers_renderWorngAnswerCell() {
         let sut = makeSUT(answer: [PresentableAnswer(isCorrect: false)])
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.tableView.dataSource?.tableView(sut.tableView, cellForRowAt: indexPath) as? WorngAnswerCell
+        let cell = sut.tableView.cell(at: 0) as? WorngAnswerCell
         XCTAssertNotNil(cell)
     }
     
