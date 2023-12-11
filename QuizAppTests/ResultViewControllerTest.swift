@@ -19,27 +19,21 @@ class ResultViewControllerTest: XCTestCase {
     }
     
     func test_viewDidLoad_withOneAnswer_renderOneAnswer() {
-        let sut = makeSUT(answer: [makeDummyAnswer()])
+        let sut = makeSUT(answer: [makeAnswer()])
         XCTAssertEqual(sut.tableView.numberOfRows(inSection: 0), 1)
     }
         
     func test_viewDidLoad_withCorrectAnswers_configureCell() {
-        let answer = makeAnswer(question: "Q1", answer: "A1", isCorrect: true)
+        let answer = makeAnswer(question: "Q1", answer: "A1")
         let sut = makeSUT(answer: [answer])
         let cell = sut.tableView.cell(at: 0) as? CorrectAnswerCell
         XCTAssertNotNil(cell)
         XCTAssertEqual(cell?.questionLabel.text, "Q1")
         XCTAssertEqual(cell?.answerLabel.text, "A1")
     }
-    
-    func test_viewDidLoad_withWorngAnswers_renderWorngAnswerCell() {
-        let sut = makeSUT(answer: [makeAnswer(isCorrect: false)])
-        let cell = sut.tableView.cell(at: 0) as? WorngAnswerCell
-        XCTAssertNotNil(cell)
-    }
-    
+        
     func test_viewDidLoad_withWorngAnswers_configureCell() {
-        let answer = makeAnswer(question: "Q1", answer: "A1",worngAnswer: "worng", isCorrect: false)
+        let answer = makeAnswer(question: "Q1", answer: "A1",worngAnswer: "worng")
         let sut = makeSUT(answer: [answer])
         let cell = sut.tableView.cell(at: 0) as? WorngAnswerCell
         XCTAssertNotNil(cell)
@@ -55,11 +49,7 @@ class ResultViewControllerTest: XCTestCase {
         return sut
     }
     
-    func makeDummyAnswer() -> PresentableAnswer   {
-        makeAnswer(isCorrect: false)
-    }
-    
-    func makeAnswer(question: String = "", answer: String = "",worngAnswer: String? = nil, isCorrect: Bool) -> PresentableAnswer {
-        PresentableAnswer(question: question, answer: answer, worngAnswer: worngAnswer, isCorrect: isCorrect)
+    func makeAnswer(question: String = "", answer: String = "",worngAnswer: String? = nil) -> PresentableAnswer {
+        PresentableAnswer(question: question, answer: answer, worngAnswer: worngAnswer)
     }
 }
