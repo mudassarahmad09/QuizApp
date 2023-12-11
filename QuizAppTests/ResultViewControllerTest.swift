@@ -39,12 +39,13 @@ class ResultViewControllerTest: XCTestCase {
     }
     
     func test_viewDidLoad_withWorngAnswers_configureCell() {
-        let answer = makeAnswer(question: "Q1", answer: "A1", isCorrect: false)
+        let answer = makeAnswer(question: "Q1", answer: "A1",worngAnswer: "worng", isCorrect: false)
         let sut = makeSUT(answer: [answer])
         let cell = sut.tableView.cell(at: 0) as? WorngAnswerCell
         XCTAssertNotNil(cell)
         XCTAssertEqual(cell?.questionLabel.text, "Q1")
         XCTAssertEqual(cell?.corretAnswerLabel.text, "A1")
+        XCTAssertEqual(cell?.worngAnswerLabel.text, "worng")
     }
     
     // MARK: Helper
@@ -58,7 +59,7 @@ class ResultViewControllerTest: XCTestCase {
         makeAnswer(isCorrect: false)
     }
     
-    func makeAnswer(question: String = "", answer: String = "", isCorrect: Bool) -> PresentableAnswer {
-        PresentableAnswer(question: question, answer: answer, isCorrect: isCorrect)
+    func makeAnswer(question: String = "", answer: String = "",worngAnswer: String? = nil, isCorrect: Bool) -> PresentableAnswer {
+        PresentableAnswer(question: question, answer: answer, worngAnswer: worngAnswer, isCorrect: isCorrect)
     }
 }
