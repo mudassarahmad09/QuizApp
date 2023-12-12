@@ -30,6 +30,9 @@
 		80727D1C2B283D60009CD539 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */; };
 		80727D1E2B28688C009CD539 /* QuestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727D1D2B28688C009CD539 /* QuestionTest.swift */; };
 		80D863EF2B2874E3002E506C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863EE2B2874E3002E506C /* Question.swift */; };
+		80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */; };
+		80D863F42B289A71002E506C /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */; };
+		80D863F62B28A223002E506C /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		80727D1D2B28688C009CD539 /* QuestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTest.swift; sourceTree = "<group>"; };
 		80D863EE2B2874E3002E506C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCotrollerFactory.swift; sourceTree = "<group>"; };
+		80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
+		80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,8 @@
 				80727CBE2B26F53D009CD539 /* PresentableAnswer.swift */,
 				80727CBC2B26F4F5009CD539 /* UiTableViewExtension.swift */,
 				80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */,
+				80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */,
+				80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */,
 				80D863EE2B2874E3002E506C /* Question.swift */,
 				801C480A2B209B25003E4493 /* Assets.xcassets */,
 				801C480C2B209B25003E4493 /* LaunchScreen.storyboard */,
@@ -145,6 +153,7 @@
 				801C48312B209BEE003E4493 /* QuestionViewControllerTest.swift */,
 				803066FF2B21F89000336277 /* ResultViewControllerTest.swift */,
 				80727D192B283BEE009CD539 /* NavigationContorllerRouterTest.swift */,
+				80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */,
 				80727D1D2B28688C009CD539 /* QuestionTest.swift */,
 				80727CB62B220D1B009CD539 /* TableViewHelper.swift */,
 			);
@@ -308,8 +317,10 @@
 				801C48042B209B24003E4493 /* SceneDelegate.swift in Sources */,
 				80727D1C2B283D60009CD539 /* NavigationControllerRouter.swift in Sources */,
 				80727CC12B26F580009CD539 /* CorrectAnswerCell.swift in Sources */,
+				80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */,
 				801C48342B209E3A003E4493 /* QuestionViewController.swift in Sources */,
 				80D863EF2B2874E3002E506C /* Question.swift in Sources */,
+				80D863F62B28A223002E506C /* iOSViewControllerFactory.swift in Sources */,
 				80727CBF2B26F53E009CD539 /* PresentableAnswer.swift in Sources */,
 				80727CC32B26F598009CD539 /* WorngAnswerCell.swift in Sources */,
 				803067022B21F9B800336277 /* ResultViewController.swift in Sources */,
@@ -326,6 +337,7 @@
 				801C48322B209BEE003E4493 /* QuestionViewControllerTest.swift in Sources */,
 				80727CB72B220D1B009CD539 /* TableViewHelper.swift in Sources */,
 				803067002B21F89000336277 /* ResultViewControllerTest.swift in Sources */,
+				80D863F42B289A71002E506C /* iOSViewControllerFactoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
