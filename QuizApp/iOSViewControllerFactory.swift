@@ -9,9 +9,11 @@ import UIKit
 import QuizEngine
 
 class iOSViewControllerFactory: ViewCotrollerFactory {
+    private let questions: [Question<String>]
     private let options: [Question<String>: [String]]
     
-    init(options: [Question<String>: [String]]) {
+    init(question: [Question<String>], options: [Question<String>: [String]]) {
+        self.questions = question
         self.options = options
     }
     
@@ -25,15 +27,17 @@ class iOSViewControllerFactory: ViewCotrollerFactory {
     private func questionViewControleer(for question: Question<String>, options: [String], answerCallbacK: @escaping ([String]) -> (Void)) -> UIViewController {
         switch question {
         case .single(let value):
-            let controller =  QuestionViewController(question: value, options: options, selection: answerCallbacK)
-            controller.title = "Question #1"
-            return controller
+            return questionViewControler(for: question, value: value, options: options, allowsMultipleSelection: false, answerCallbacK: answerCallbacK)
         case .multiple(let value):
-            let controller =  QuestionViewController(question: value, options: options, selection: answerCallbacK)
-            _ = controller.view
-            controller.tableView.allowsMultipleSelection = true
-            return controller
+            return questionViewControler(for: question, value: value, options: options, allowsMultipleSelection: true, answerCallbacK: answerCallbacK)
         }
+    }
+    
+    private func questionViewControler(for question: Question<String>,value: String, options: [String],allowsMultipleSelection: Bool, answerCallbacK: @escaping ([String]) -> (Void)) -> QuestionViewController {
+        let presenter = QuestionPresenter(questions: questions, question: question)
+        let controller =  QuestionViewController(question: value, options: options, allowsMultipleSelection: allowsMultipleSelection, selection: answerCallbacK)
+        controller.title = presenter.title
+        return controller
     }
     
     func resultViewController(for result: Resulte<Question<String>, [String]>) -> UIViewController {

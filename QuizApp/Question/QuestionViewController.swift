@@ -13,12 +13,14 @@ class QuestionViewController: UIViewController {
     private(set) var question = ""
     private(set) var options = [String]()
     private var selection: (([String]) -> Void)? = nil
+    var allowsMultipleSelection: Bool = false
     private let reuseIdentifier = "Cell"
     
-    convenience init(question: String, options: [String], selection: @escaping ([String]) -> Void) {
+    convenience init(question: String, options: [String], allowsMultipleSelection: Bool, selection: @escaping ([String]) -> Void) {
         self.init()
         self.question = question
         self.options = options
+        self.allowsMultipleSelection = allowsMultipleSelection
         self.selection = selection
     }
     
@@ -31,7 +33,7 @@ class QuestionViewController: UIViewController {
     private func setTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.allowsMultipleSelection = true
+        tableView.allowsMultipleSelection = allowsMultipleSelection
     }
 }
 // MARK: - UITableViewDataSource _
