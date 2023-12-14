@@ -8,19 +8,20 @@
 import QuizEngine
 
 struct ResultsPresenter {
-     let resulte: Resulte<Question<String>, [String]>
-     let correctAnswers: Dictionary<Question<String>, [String]>
+    let resulte: Resulte<Question<String>, [String]>
+    let question: [Question<String>]
+    let correctAnswers: Dictionary<Question<String>, [String]>
     var summary: String {
         "You got \(resulte.score)/\(resulte.answer.count) correct"
     }
     
     var presentableAnswers: [PresentableAnswer] {
-        resulte.answer.map { (question, userAnswer) in
-            guard let correctAnswer = correctAnswers[question] else {
+        question.map { question in
+            guard let userAnswer = resulte.answer[question],
+                let correctAnswer = correctAnswers[question] else {
                 fatalError("could not find the correct answer for the question \(question)")
             }
-
-            return presentableAnswer( question,  userAnswer, correctAnswer)
+            return presentableAnswer( question, userAnswer, correctAnswer)
         }
     }
     
@@ -36,7 +37,7 @@ struct ResultsPresenter {
     }
     
     private func formattedWorngAnswer(_ userAnswer: [String], _ question: Question<String>) -> String? {
-         userAnswer == correctAnswers[question] ? nil : formattedAnswer(userAnswer)
+        userAnswer == correctAnswers[question] ? nil : formattedAnswer(userAnswer)
     }
     
     private func formattedAnswer(_ answers: [String]) -> String {
