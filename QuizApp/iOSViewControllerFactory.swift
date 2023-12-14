@@ -25,7 +25,9 @@ class iOSViewControllerFactory: ViewCotrollerFactory {
     private func questionViewControleer(for question: Question<String>, options: [String], answerCallbacK: @escaping ([String]) -> (Void)) -> UIViewController {
         switch question {
         case .single(let value):
-            return QuestionViewController(question: value, options: options, selection: answerCallbacK)
+            let controller =  QuestionViewController(question: value, options: options, selection: answerCallbacK)
+            controller.title = "Question #1"
+            return controller
         case .multiple(let value):
             let controller =  QuestionViewController(question: value, options: options, selection: answerCallbacK)
             _ = controller.view

@@ -19,6 +19,8 @@
 		803067042B21FAAC00336277 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803067032B21FAAC00336277 /* ResultViewController.xib */; };
 		803667012B29E8CE00E38F22 /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803667002B29E8CE00E38F22 /* ResultsPresenterTest.swift */; };
 		803667032B29EAF800E38F22 /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803667022B29EAF800E38F22 /* ResultsPresenter.swift */; };
+		8047C2732B2B225100103E03 /* QuestionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8047C2722B2B225100103E03 /* QuestionPresenterTest.swift */; };
+		8047C2752B2B229A00103E03 /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8047C2742B2B229A00103E03 /* QuestionPresenter.swift */; };
 		80727CB72B220D1B009CD539 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727CB62B220D1B009CD539 /* TableViewHelper.swift */; };
 		80727CB92B22182A009CD539 /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80727CB82B22182A009CD539 /* CorrectAnswerCell.xib */; };
 		80727CBB2B2250C8009CD539 /* WorngAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80727CBA2B2250C8009CD539 /* WorngAnswerCell.xib */; };
@@ -77,6 +79,8 @@
 		803067032B21FAAC00336277 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		803667002B29E8CE00E38F22 /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
 		803667022B29EAF800E38F22 /* ResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
+		8047C2722B2B225100103E03 /* QuestionPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTest.swift; sourceTree = "<group>"; };
+		8047C2742B2B229A00103E03 /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
 		80727CB62B220D1B009CD539 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 		80727CB82B22182A009CD539 /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		80727CBA2B2250C8009CD539 /* WorngAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorngAnswerCell.xib; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 				80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */,
 				80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */,
 				803667022B29EAF800E38F22 /* ResultsPresenter.swift */,
+				8047C2742B2B229A00103E03 /* QuestionPresenter.swift */,
 				80D863EE2B2874E3002E506C /* Question.swift */,
 				801C480A2B209B25003E4493 /* Assets.xcassets */,
 				801C480C2B209B25003E4493 /* LaunchScreen.storyboard */,
@@ -160,6 +165,7 @@
 				80727D192B283BEE009CD539 /* NavigationContorllerRouterTest.swift */,
 				80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */,
 				803667002B29E8CE00E38F22 /* ResultsPresenterTest.swift */,
+				8047C2722B2B225100103E03 /* QuestionPresenterTest.swift */,
 				80727D1D2B28688C009CD539 /* QuestionTest.swift */,
 				80727CB62B220D1B009CD539 /* TableViewHelper.swift */,
 			);
@@ -327,6 +333,7 @@
 				80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */,
 				801C48342B209E3A003E4493 /* QuestionViewController.swift in Sources */,
 				80D863EF2B2874E3002E506C /* Question.swift in Sources */,
+				8047C2752B2B229A00103E03 /* QuestionPresenter.swift in Sources */,
 				80D863F62B28A223002E506C /* iOSViewControllerFactory.swift in Sources */,
 				80727CBF2B26F53E009CD539 /* PresentableAnswer.swift in Sources */,
 				80727CC32B26F598009CD539 /* WorngAnswerCell.swift in Sources */,
@@ -345,6 +352,7 @@
 				801C48322B209BEE003E4493 /* QuestionViewControllerTest.swift in Sources */,
 				80727CB72B220D1B009CD539 /* TableViewHelper.swift in Sources */,
 				803067002B21F89000336277 /* ResultViewControllerTest.swift in Sources */,
+				8047C2732B2B225100103E03 /* QuestionPresenterTest.swift in Sources */,
 				80D863F42B289A71002E506C /* iOSViewControllerFactoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
