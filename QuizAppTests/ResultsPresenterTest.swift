@@ -66,36 +66,6 @@ class ResultsPresenterTest: XCTestCase {
         XCTAssertEqual(sut.presentableAnswers.first?.worngAnswer, "A1, A4")
     }
     
-    func test_presentableAnswers_withRightSingleAnswer_mapAnswer() {
-        let userAnswer = [singleAnswerQuestion: ["A1"]]
-        let correctAnswers = [singleAnswerQuestion: ["A1"]]
-        let resulte = Resulte(answer: userAnswer, score: 1)
-        let sut = ResultsPresenter(
-            resulte: resulte,
-            question: [singleAnswerQuestion],
-            correctAnswers: correctAnswers)
-        
-        XCTAssertEqual(sut.presentableAnswers.count, 1)
-        XCTAssertEqual(sut.presentableAnswers.first?.question, "Q1")
-        XCTAssertEqual(sut.presentableAnswers.first?.answer, "A1")
-        XCTAssertNil(sut.presentableAnswers.first?.worngAnswer)
-    }
-    
-    func test_presentableAnswers_withRightMultipleAnswer_mapMutipleAnswers() {
-        let userAnswer = [multipleAnswerQuestion: ["A2", "A3"]]
-        let correctAnswers = [multipleAnswerQuestion: ["A2", "A3"]]
-        let resulte = Resulte(answer: userAnswer, score: 0)
-        let sut = ResultsPresenter(
-            resulte: resulte,
-            question: [multipleAnswerQuestion],
-            correctAnswers: correctAnswers)
-        
-        XCTAssertEqual(sut.presentableAnswers.count, 1)
-        XCTAssertEqual(sut.presentableAnswers.first?.question, "Q2")
-        XCTAssertEqual(sut.presentableAnswers.first?.answer, "A2, A3")
-        XCTAssertNil(sut.presentableAnswers.first?.worngAnswer)
-    }
-    
     func test_presentableAnswers_withTwoMultipleAnswer_mapOrderedAnswers() {
         let userAnswer = [singleAnswerQuestion: ["A2"], multipleAnswerQuestion: ["A1", "A4"]]
         let correctAnswers = [singleAnswerQuestion: ["A2"], multipleAnswerQuestion: ["A1", "A4"]]
