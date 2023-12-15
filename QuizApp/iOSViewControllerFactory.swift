@@ -41,6 +41,6 @@ class iOSViewControllerFactory: ViewCotrollerFactory {
     }
     
     func resultViewController(for result: Resulte<Question<String>, [String]>) -> UIViewController {
-        UIViewController()
+        ResultViewController()
     }
 }

@@ -11,8 +11,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    private var summary: String = ""
-    private var answers: [PresentableAnswer] = [PresentableAnswer]()
+    private(set) var summary: String = ""
+    private(set) var answers: [PresentableAnswer] = [PresentableAnswer]()
     
     convenience init(summary: String, answer: [PresentableAnswer]) {
         self.init()
