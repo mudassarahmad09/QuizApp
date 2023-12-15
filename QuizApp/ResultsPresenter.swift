@@ -11,6 +11,11 @@ struct ResultsPresenter {
     let resulte: Resulte<Question<String>, [String]>
     let question: [Question<String>]
     let correctAnswers: Dictionary<Question<String>, [String]>
+    
+    var title: String {
+        "Result"
+    }
+    
     var summary: String {
         "You got \(resulte.score)/\(resulte.answer.count) correct"
     }
@@ -18,7 +23,7 @@ struct ResultsPresenter {
     var presentableAnswers: [PresentableAnswer] {
         question.map { question in
             guard let userAnswer = resulte.answer[question],
-                let correctAnswer = correctAnswers[question] else {
+                  let correctAnswer = correctAnswers[question] else {
                 fatalError("could not find the correct answer for the question \(question)")
             }
             return presentableAnswer( question, userAnswer, correctAnswer)
