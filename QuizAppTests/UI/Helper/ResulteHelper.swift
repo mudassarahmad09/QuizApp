@@ -7,17 +7,19 @@
 
 @testable import QuizEngine
 
-extension Resulte: Hashable {
+extension Resulte {
     static func make(answer: [Question : Answer] = [:], score: Int = 0) -> Resulte<Question, Answer> {
         Resulte(answer: answer, score: score)
     }
-    
+}
+extension Resulte: Equatable where Answer: Equatable {
+    public static func == (lhs: Resulte<Question, Answer>, rhs: Resulte<Question, Answer>) -> Bool {
+        return lhs.score == rhs.score && lhs.answer == rhs.answer
+        
+    }
+}
+extension Resulte: Hashable where Answer: Equatable  {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(score)
-    }
-    
-    public static func == (lhs: Resulte<Question, Answer>, rhs: Resulte<Question, Answer>) -> Bool {
-        return lhs.score == rhs.score
-        
     }
 }
