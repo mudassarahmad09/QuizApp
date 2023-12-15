@@ -55,54 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81C656C9-8D1F-425A-95AD-4FB090B800D9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuizAppTests/NavigationContorllerRouterTest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "test_routerToQuestion_multipleAnswerSubmitButton_progressToNextQuestion()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "81C656C9-8D1F-425A-95AD-4FB090B800D9 - a8d3f394180b755a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuizAppTests.NavigationContorllerRouterTest.test_routerToQuestion_multipleAnswerSubmitButton_progressToNextQuestion() -&gt; ()"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/QuizApp/QuizAppTests/NavigationContorllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "308">
-               </Location>
-               <Location
-                  uuid = "81C656C9-8D1F-425A-95AD-4FB090B800D9 - 2c1f4c51457b1d82"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Array&lt;Swift.String&gt;) -&gt; () in QuizAppTests.NavigationContorllerRouterTest.test_routerToQuestion_multipleAnswerSubmitButton_progressToNextQuestion() -&gt; ()"
-                  moduleName = "QuizAppTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/QuizApp/QuizAppTests/NavigationContorllerRouterTest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A447B2F2-964E-4B34-BA89-8E8C4D4EAE31"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

@@ -50,6 +50,14 @@ class NavigationContorllerRouterTest: XCTestCase {
         XCTAssertNotNil(viewController.navigationItem.rightBarButtonItem)
     }
     
+    func test_routerToQuestion_singleAnswer_doesNotConfiguerViewControllerWithSubmitButton() {
+        let viewController =  UIViewController()
+        factory.stub(question: Question.single("Q1"), with: viewController)
+        sut.routeTo(question: Question.single("Q1"), answerCallback: {_ in })
+        
+        XCTAssertNil(viewController.navigationItem.rightBarButtonItem)
+    }
+    
     func test_routerToQuestion_multipleAnswerSubmitButton_isDisableWhenZeroAnswerSelected() {
         let viewController =  UIViewController()
         factory.stub(question: Question.multiple("Q1"), with: viewController)
@@ -72,7 +80,7 @@ class NavigationContorllerRouterTest: XCTestCase {
         sut.routeTo(question: Question.multiple("Q1"), answerCallback: {_ in  callbackWasFired = true})
         
         let button = viewController.navigationItem.rightBarButtonItem!
-        button.target!.performSelector(onMainThread: button.action!, with: nil, waitUntilDone: true)
+        button.simulateTap()
                 
         XCTAssertTrue(callbackWasFired)
     }
@@ -124,5 +132,10 @@ class NavigationContorllerRouterTest: XCTestCase {
         func resultViewController(for result: Resulte<Question<String>, [String]>) -> UIViewController {
             stubResults[result] ?? UIViewController()
         }
+    }
+}
+private extension UIBarButtonItem {
+    func simulateTap() {
+        target!.performSelector(onMainThread: action!, with: nil, waitUntilDone: true)
     }
 }
