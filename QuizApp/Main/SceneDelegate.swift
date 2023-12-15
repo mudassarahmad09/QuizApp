@@ -6,24 +6,41 @@
 //
 
 import UIKit
+import QuizEngine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    var game: Game<Question<String>, [String], NavigationControllerRouter>?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = .init(windowScene: scene)
         
-        let viewController = ResultViewController(summary: "You get 1/2 correct ", answer: [
-            PresentableAnswer(question: "Question 1 Question 1 Question 1 Question 1 Question 1", answer: "Yeah! Yeah! Yeah! Yeah! Yeah! Yeah! Yeah! Yeah! Yeah!", worngAnswer: nil),
-            PresentableAnswer(question: "Question 2", answer: "Hell Yeah!", worngAnswer: "Hell no")
-        ])
-        _ = viewController.view
-        viewController.tableView.allowsMultipleSelection = false
-        window?.rootViewController = viewController
+        let question1 = Question.single("What is the Mudassar Nationality?")
+        let question2 = Question.multiple("What Are  Nationalities Mudassar want?")
+        let questions = [question1, question2]
         
+        let option1 = "Pakistan"
+        let option2 = "India"
+        let option3 = "USA"
+        let options1 = [option1, option2, option3]
+        
+        let option4 = "India"
+        let option5 = "Astrulia"
+        let option6 = "USA"
+        let options2 = [option4, option5, option6]
+        
+        let correctAnswer = [question1: [option1], question2: [option5,option6]]
+    
+        let navigationController = UINavigationController()
+        let factory = iOSViewControllerFactory(question: questions, options: [question1 :options1, question2 :options2], correctAnswer: correctAnswer)
+        let router = NavigationControllerRouter(navigationController, factory: factory)
+        
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        game =  startGame(questions: questions, router: router, correctAnswer: correctAnswer)
         
     }
     
