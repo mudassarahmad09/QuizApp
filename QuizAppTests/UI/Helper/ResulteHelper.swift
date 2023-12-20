@@ -18,8 +18,9 @@ extension Resulte: Equatable where Answer: Equatable {
         
     }
 }
-extension Resulte: Hashable where Answer: Equatable  {
+extension Resulte: Hashable where Answer: Hashable  {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(score)
+        hasher.combine(answer)
     }
 }
