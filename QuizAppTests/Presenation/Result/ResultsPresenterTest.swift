@@ -15,22 +15,13 @@ class ResultsPresenterTest: XCTestCase {
     let multipleAnswerQuestion = Question.multiple("Q2")
     
     func test_title_returnFormatedTitle() {
-        let sut = ResultsPresenter(
-            resulte: .make(),
-            question: [],
-            correctAnswers: [:])
-        XCTAssertEqual(sut.title, "Result")
+        XCTAssertEqual(makeSUT().title, "Result")
     }
     
     func test_summay_withTwoQuestionAndScoreOne_returnSummary() {
-        let answer = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2", "A3"]]
-        let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A2"]]
-        let orderQuestion = [singleAnswerQuestion, multipleAnswerQuestion]
-        let resulte = Resulte.make(answer: answer, score: 1)
-        let sut = ResultsPresenter(
-            resulte: resulte,
-            question: orderQuestion,
-            correctAnswers: correctAnswers)
+        let userAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A2", "A3"])]
+        let correctAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A2"])]
+        let sut = makeSUT(userAnswers: userAnswers, correctAnswers: correctAnswers, score: 1)
         XCTAssertEqual(sut.summary, "You got 1/2 correct")
     }
     
@@ -89,5 +80,16 @@ class ResultsPresenterTest: XCTestCase {
         XCTAssertEqual(sut.presentableAnswers.last?.question, "Q2")
         XCTAssertEqual(sut.presentableAnswers.last?.answer, "A1, A4")
         XCTAssertNil(sut.presentableAnswers.last?.worngAnswer)
+    }
+    
+    // MARK: - Helper
+    private func makeSUT(userAnswers: ResultsPresenter.Answer = [],
+                         correctAnswers: ResultsPresenter.Answer = [],
+                         score: Int = 0) -> ResultsPresenter {
+        
+         ResultsPresenter(
+            userAnswers: userAnswers,
+            correctAnswers: correctAnswers,
+            scorer: { _,_ in score })
     }
 }
