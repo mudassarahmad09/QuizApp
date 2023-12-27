@@ -7,26 +7,40 @@
 
 import QuizEngine
 
-struct ResultsPresenter {
-    let resulte: Resulte<Question<String>, [String]>
-    let question: [Question<String>]
-    let correctAnswers: Dictionary<Question<String>, [String]>
+final class ResultsPresenter {
+    typealias Answer = [(question: Question<String>, answers: [String])]
+    typealias Scorer = ([[String]], [[String]]) -> Int
+    
+    private let userAnswers: Answer
+    private let correctAnswers: Answer
+    private let scorer: Scorer
+        
+    init(resulte: Resulte<Question<String>, [String]>, question: [Question<String>], correctAnswers: Dictionary<Question<String>, [String]>) {
+        
+        self.userAnswers = question.map { question in
+            (question, resulte.answer[question]!)
+        }
+        self.correctAnswers = question.map { question in
+            (question, correctAnswers[question]!)
+        }
+        self.scorer = { _,_  in resulte.score}
+    }
     
     var title: String {
         "Result"
     }
     
     var summary: String {
-        "You got \(resulte.score)/\(resulte.answer.count) correct"
+        "You got \(score)/\(userAnswers.count) correct"
+    }
+    
+    var score: Int {
+        scorer(userAnswers.map { $0.answers }, correctAnswers.map { $0.answers })
     }
     
     var presentableAnswers: [PresentableAnswer] {
-        question.map { question in
-            guard let userAnswer = resulte.answer[question],
-                  let correctAnswer = correctAnswers[question] else {
-                fatalError("could not find the correct answer for the question \(question)")
-            }
-            return presentableAnswer( question, userAnswer, correctAnswer)
+        return zip(userAnswers, correctAnswers).map { userAnswer, correctAnswer in
+            return presentableAnswer(userAnswer.question, userAnswer.answers, correctAnswer.answers)
         }
     }
     
@@ -36,13 +50,13 @@ struct ResultsPresenter {
             return PresentableAnswer(
                 question: value,
                 answer: formattedAnswer(correctAnswer),
-                worngAnswer: formattedWorngAnswer(userAnswer, question)
+                worngAnswer: formattedWrongAnswer(userAnswer, correctAnswer)
             )
         }
     }
     
-    private func formattedWorngAnswer(_ userAnswer: [String], _ question: Question<String>) -> String? {
-        userAnswer == correctAnswers[question] ? nil : formattedAnswer(userAnswer)
+    private func formattedWrongAnswer(_ userAnswer: [String], _ correctAnswer: [String]) -> String? {
+         correctAnswer == userAnswer ? nil : formattedAnswer(userAnswer)
     }
     
     private func formattedAnswer(_ answers: [String]) -> String {
