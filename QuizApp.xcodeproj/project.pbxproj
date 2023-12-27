@@ -33,6 +33,7 @@
 		80727D1A2B283BEE009CD539 /* NavigationContorllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727D192B283BEE009CD539 /* NavigationContorllerRouterTest.swift */; };
 		80727D1C2B283D60009CD539 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */; };
 		809854A52B2C96DE006C21DD /* ResulteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809854A42B2C96DE006C21DD /* ResulteHelper.swift */; };
+		80AB82A62B3C135000764803 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82A52B3C135000764803 /* ScoreTest.swift */; };
 		80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */; };
 		80D863F42B289A71002E506C /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */; };
 		80D863F62B28A223002E506C /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */; };
@@ -91,6 +92,7 @@
 		80727D192B283BEE009CD539 /* NavigationContorllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContorllerRouterTest.swift; sourceTree = "<group>"; };
 		80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		809854A42B2C96DE006C21DD /* ResulteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResulteHelper.swift; sourceTree = "<group>"; };
+		80AB82A52B3C135000764803 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCotrollerFactory.swift; sourceTree = "<group>"; };
 		80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		801C48172B209B25003E4493 /* QuizAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				80AB82A42B3C132C00764803 /* Scoring */,
 				8098549C2B2C88E1006C21DD /* Router */,
 				8098549B2B2C88CC006C21DD /* Presenation */,
 				8098549A2B2C88B2006C21DD /* UI */,
@@ -344,6 +347,14 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
+		80AB82A42B3C132C00764803 /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				80AB82A52B3C135000764803 /* ScoreTest.swift */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,6 +484,7 @@
 				803667012B29E8CE00E38F22 /* ResultsPresenterTest.swift in Sources */,
 				80727D1A2B283BEE009CD539 /* NavigationContorllerRouterTest.swift in Sources */,
 				809854A52B2C96DE006C21DD /* ResulteHelper.swift in Sources */,
+				80AB82A62B3C135000764803 /* ScoreTest.swift in Sources */,
 				801C48322B209BEE003E4493 /* QuestionViewControllerTest.swift in Sources */,
 				80727CB72B220D1B009CD539 /* TableViewHelper.swift in Sources */,
 				803067002B21F89000336277 /* ResultViewControllerTest.swift in Sources */,
