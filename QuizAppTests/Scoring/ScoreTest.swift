@@ -10,7 +10,7 @@ import XCTest
 
 class ScoreTest: XCTestCase {
     func test_noAnswer_scoreZero() {
-        XCTAssertEqual(BasicScore.score(for: [], comparingTo: []), 0)
+        XCTAssertEqual(BasicScore.score(for: [String](), comparingTo: [String]()), 0)
     }
     
     func test_oneNonMatchingAnswer_scoreZero() {
