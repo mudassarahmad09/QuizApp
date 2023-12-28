@@ -9,7 +9,7 @@ import XCTest
 import QuizEngine
 @testable import QuizApp
 
-class iOSViewControllerFactoryTest: XCTestCase {
+class iOSUIKitViewControllerFactoryTest: XCTestCase {
     
     let singleAnswerQuestion = Question.single("Q1")
     let multipleAnswerQuestion = Question.multiple("Q1")
@@ -67,8 +67,8 @@ class iOSViewControllerFactoryTest: XCTestCase {
     
     // MARK: Helper
     func makeSUT(options: [Question<String>: [String]] = [:],
-                 correctAnswer: [(Question<String>, [String])] = []) -> iOSViewControllerFactory {
-        iOSViewControllerFactory(options: options, correctAnswer: correctAnswer)
+                 correctAnswer: [(Question<String>, [String])] = []) -> iOSUIKitViewControllerFactory {
+        iOSUIKitViewControllerFactory(options: options, correctAnswer: correctAnswer)
     }
     
     func makeQuestionViewController(question: Question<String> = Question.single("")) -> QuestionViewController {

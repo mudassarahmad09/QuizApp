@@ -8,7 +8,7 @@
 import UIKit
 import QuizEngine
 
-final class iOSViewControllerFactory: ViewCotrollerFactory {
+final class iOSUIKitViewControllerFactory: ViewCotrollerFactory {
     
     typealias Answer = [(question: Question<String>, answer: [String])]
     
