@@ -34,6 +34,7 @@
 		80727D1C2B283D60009CD539 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */; };
 		80AB82A62B3C135000764803 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82A52B3C135000764803 /* ScoreTest.swift */; };
 		80AB82A92B3C13E800764803 /* BacisScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82A82B3C13E800764803 /* BacisScore.swift */; };
+		80AB82AD2B3DA08100764803 /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82AC2B3DA08100764803 /* SingleAnswerQuestion.swift */; };
 		80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */; };
 		80D863F42B289A71002E506C /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */; };
 		80D863F62B28A223002E506C /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */; };
@@ -93,6 +94,7 @@
 		80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		80AB82A52B3C135000764803 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		80AB82A82B3C13E800764803 /* BacisScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacisScore.swift; sourceTree = "<group>"; };
+		80AB82AC2B3DA08100764803 /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
 		80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCotrollerFactory.swift; sourceTree = "<group>"; };
 		80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -213,10 +215,8 @@
 		809854912B2C86B2006C21DD /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				809854922B2C8733006C21DD /* Helper */,
-				809854932B2C876E006C21DD /* Launch */,
-				80727CC42B26FD37009CD539 /* Question */,
-				80727CC52B26FD5A009CD539 /* Result */,
+				80AB82AB2B3DA04B00764803 /* SwiftUI */,
+				80AB82AA2B3D912700764803 /* UIKit */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -363,6 +363,25 @@
 			path = Scoring;
 			sourceTree = "<group>";
 		};
+		80AB82AA2B3D912700764803 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				809854922B2C8733006C21DD /* Helper */,
+				809854932B2C876E006C21DD /* Launch */,
+				80727CC42B26FD37009CD539 /* Question */,
+				80727CC52B26FD5A009CD539 /* Result */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		80AB82AB2B3DA04B00764803 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				80AB82AC2B3DA08100764803 /* SingleAnswerQuestion.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,6 +500,7 @@
 				80D863F62B28A223002E506C /* iOSViewControllerFactory.swift in Sources */,
 				80727CBF2B26F53E009CD539 /* PresentableAnswer.swift in Sources */,
 				80727CC32B26F598009CD539 /* WorngAnswerCell.swift in Sources */,
+				80AB82AD2B3DA08100764803 /* SingleAnswerQuestion.swift in Sources */,
 				803067022B21F9B800336277 /* ResultViewController.swift in Sources */,
 				80727CBD2B26F4F5009CD539 /* UiTableViewExtension.swift in Sources */,
 			);
