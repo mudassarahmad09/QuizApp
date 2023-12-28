@@ -7,16 +7,6 @@ import QuizEngine
 @testable import QuizApp
 
 class NavigationContorllerRouterTest: XCTestCase {
-    let singleAnswerQuestion = Question.single("Q1")
-    let multipleAnswerQuestion = Question.multiple("Q2")
-    
-    let navigationController = NoneAnimatedNavigationContorller()
-    let factory = ViewControllerFactoryStub()
-    
-    lazy var sut = {
-        NavigationControllerRouter(navigationController, factory: factory)
-    }()
-    
     func test_answerForQuestions_showsQuestionController() {
 
         let viewController =  UIViewController()
@@ -87,7 +77,7 @@ class NavigationContorllerRouterTest: XCTestCase {
         XCTAssertTrue(callbackWasFired)
     }
     
-    func test_routerToResult_showsResultController() {
+    func test_didCompleteQuiz_showsResultController() {
 
         let viewController =  UIViewController()
         let userAnswers = [(singleAnswerQuestion, ["A1"])]
@@ -108,13 +98,23 @@ class NavigationContorllerRouterTest: XCTestCase {
     
     // MARK: - Helper
     
-    class NoneAnimatedNavigationContorller: UINavigationController {
+    private let singleAnswerQuestion = Question.single("Q1")
+    private let multipleAnswerQuestion = Question.multiple("Q2")
+    
+    private let navigationController = NoneAnimatedNavigationContorller()
+    private let factory = ViewControllerFactoryStub()
+    
+    private lazy var sut = {
+        NavigationControllerRouter(navigationController, factory: factory)
+    }()
+    
+    private class NoneAnimatedNavigationContorller: UINavigationController {
         override func pushViewController(_ viewController: UIViewController, animated: Bool) {
             super.pushViewController(viewController, animated: false)
         }
     }
     
-    class ViewControllerFactoryStub:  ViewCotrollerFactory {
+    private class ViewControllerFactoryStub:  ViewCotrollerFactory {
         
         private var stubQuestions = Dictionary<Question<String>, UIViewController>()
         private var stubResults = Dictionary<[Question<String>], UIViewController>()
@@ -135,10 +135,6 @@ class NavigationContorllerRouterTest: XCTestCase {
         
         func resultViewController(for userAnswers: Answer) -> UIViewController {
             stubResults[userAnswers.map { $0.question }] ?? UIViewController()
-        }
-        
-        func resultViewController(for result: Resulte<Question<String>, [String]>) -> UIViewController {
-             UIViewController()
         }
     }
 }
