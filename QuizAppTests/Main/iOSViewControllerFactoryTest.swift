@@ -70,29 +70,30 @@ class iOSViewControllerFactoryTest: XCTestCase {
         iOSViewControllerFactory(question: [singleAnswerQuestion, multipleAnswerQuestion], options: options, correctAnswer: correctAnswer)
     }
     
+    func makeSUT(options: [Question<String>: [String]] = [:],
+                 correctAnswer: [(Question<String>, [String])] = []) -> iOSViewControllerFactory {
+        iOSViewControllerFactory(options: options, correctAnswer: correctAnswer)
+    }
+    
     func makeQuestionViewController(question: Question<String> = Question.single("")) -> QuestionViewController {
-         makeSUT(options: [question: options]).questionViewController(for: question, answerCallbacK: {_ in }) as! QuestionViewController
+        makeSUT(options: [question: options], correctAnswer: [:]).questionViewController(for: question, answerCallbacK: {_ in }) as! QuestionViewController
     }
     
     func makeReulst() -> (controller: ResultViewController, presenter: ResultsPresenter) {
-        let userAnswer = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-        let correctAnswer = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]]
-        let question =  [singleAnswerQuestion, multipleAnswerQuestion]
+        let userAnswer = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1", "A2"])]
+        let correctAnswer = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1", "A2"])]
+        let resulte = Resulte.make(
+            answer: [singleAnswerQuestion: ["A1"], multipleAnswerQuestion: ["A1", "A2"]],
+            score: 2)
         
-        let resulte = Resulte.make(answer: userAnswer)
+        let presenter = ResultsPresenter(
+            userAnswers: userAnswer,
+            correctAnswers: correctAnswer,
+            scorer: {_,_ in 2}
+        )
+        
         let sut = makeSUT(correctAnswer: correctAnswer)
-        let presenter = ResultsPresenter(resulte: resulte, question: question, correctAnswers: correctAnswer)
         let controller = sut.resultViewController(for: resulte) as! ResultViewController
-        
         return (controller ,presenter)
-    }
-}
-private extension ResultsPresenter {
-    convenience init(resulte: Resulte<Question<String>, [String]>, question: [Question<String>], correctAnswers: Dictionary<Question<String>, [String]>) {
-        self.init(userAnswers: question.map { question in
-            (question, resulte.answer[question]!)
-        }, correctAnswers: question.map { question in
-            (question, correctAnswers[question]!)
-        }, scorer: { _,_  in resulte.score})
     }
 }
