@@ -8,18 +8,20 @@
 import UIKit
 import QuizEngine
 
-class iOSViewControllerFactory: ViewCotrollerFactory {
+final class iOSViewControllerFactory: ViewCotrollerFactory {
     
     typealias Answer = [(question: Question<String>, answers: [String])]
     
-    private let questions: [Question<String>]
     private let options: [Question<String>: [String]]
-    private let correctAnswer: () -> Answer
+    private let correctAnswer: Answer
+    
+    private var questions: [Question<String>] {
+        correctAnswer.map { $0.question }
+    }
     
     init(options: [Question<String>: [String]], correctAnswer: Answer) {
-        self.questions = correctAnswer.map { $0.question }
         self.options = options
-        self.correctAnswer = { correctAnswer }
+        self.correctAnswer = correctAnswer
     }
     
     func questionViewController(for question: Question<String>, answerCallbacK: @escaping ([String]) -> (Void)) -> UIViewController {
@@ -47,7 +49,7 @@ class iOSViewControllerFactory: ViewCotrollerFactory {
     func resultViewController(for userAnswers: Answer) -> UIViewController {
         let preseenter =  ResultsPresenter(
             userAnswers: userAnswers,
-            correctAnswers: correctAnswer(),
+            correctAnswers: correctAnswer,
             scorer: BasicScore.score)
         
        let controller =  ResultViewController(summary: preseenter.summary, answer: preseenter.presentableAnswers)
@@ -60,7 +62,7 @@ class iOSViewControllerFactory: ViewCotrollerFactory {
             userAnswers: questions.map { question in
             (question, result.answer[question]!)
         },
-            correctAnswers: correctAnswer(),
+            correctAnswers: correctAnswer,
             scorer: { _,_  in result.score})
         
        let controller =  ResultViewController(summary: preseenter.summary, answer: preseenter.presentableAnswers)
