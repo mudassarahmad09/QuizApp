@@ -36,6 +36,7 @@
 		80AB82A92B3C13E800764803 /* BacisScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82A82B3C13E800764803 /* BacisScore.swift */; };
 		80AB82AD2B3DA08100764803 /* SingleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82AC2B3DA08100764803 /* SingleAnswerQuestion.swift */; };
 		80AB82AF2B3DAC7400764803 /* QuestionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82AE2B3DAC7400764803 /* QuestionHeader.swift */; };
+		80AB82B12B3DB19700764803 /* singleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82B02B3DB19700764803 /* singleTextSelectionCell.swift */; };
 		80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */; };
 		80D863F42B289A71002E506C /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */; };
 		80D863F62B28A223002E506C /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */; };
@@ -97,6 +98,7 @@
 		80AB82A82B3C13E800764803 /* BacisScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacisScore.swift; sourceTree = "<group>"; };
 		80AB82AC2B3DA08100764803 /* SingleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAnswerQuestion.swift; sourceTree = "<group>"; };
 		80AB82AE2B3DAC7400764803 /* QuestionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeader.swift; sourceTree = "<group>"; };
+		80AB82B02B3DB19700764803 /* singleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleTextSelectionCell.swift; sourceTree = "<group>"; };
 		80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCotrollerFactory.swift; sourceTree = "<group>"; };
 		80D863F32B289A71002E506C /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		80D863F52B28A223002E506C /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			children = (
 				80AB82AC2B3DA08100764803 /* SingleAnswerQuestion.swift */,
 				80AB82AE2B3DAC7400764803 /* QuestionHeader.swift */,
+				80AB82B02B3DB19700764803 /* singleTextSelectionCell.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				80727D1C2B283D60009CD539 /* NavigationControllerRouter.swift in Sources */,
 				80727CC12B26F580009CD539 /* CorrectAnswerCell.swift in Sources */,
 				80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */,
+				80AB82B12B3DB19700764803 /* singleTextSelectionCell.swift in Sources */,
 				801C48342B209E3A003E4493 /* QuestionViewController.swift in Sources */,
 				80AB82AF2B3DAC7400764803 /* QuestionHeader.swift in Sources */,
 				8047C2752B2B229A00103E03 /* QuestionPresenter.swift in Sources */,
