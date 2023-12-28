@@ -8,7 +8,15 @@ import UIKit
 import QuizEngine
 
 protocol ViewCotrollerFactory {
+    typealias Answer = [(question: Question<String>, answers: [String])]
     func questionViewController(for question: Question<String>, answerCallbacK: @escaping ([String]) -> (Void)) -> UIViewController
     
+    func resultViewController(for userAnswers: Answer) -> UIViewController
+    
     func resultViewController(for result: Resulte<Question<String>, [String]>) -> UIViewController
+}
+extension ViewCotrollerFactory {
+    func resultViewController(for userAnswers: Answer) -> UIViewController {
+        UIViewController()
+    }
 }
