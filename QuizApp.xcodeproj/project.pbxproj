@@ -32,7 +32,6 @@
 		80727D172B279410009CD539 /* QuizEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80727D152B279410009CD539 /* QuizEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		80727D1A2B283BEE009CD539 /* NavigationContorllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727D192B283BEE009CD539 /* NavigationContorllerRouterTest.swift */; };
 		80727D1C2B283D60009CD539 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */; };
-		809854A52B2C96DE006C21DD /* ResulteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809854A42B2C96DE006C21DD /* ResulteHelper.swift */; };
 		80AB82A62B3C135000764803 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82A52B3C135000764803 /* ScoreTest.swift */; };
 		80AB82A92B3C13E800764803 /* BacisScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB82A82B3C13E800764803 /* BacisScore.swift */; };
 		80D863F22B2899E8002E506C /* ViewCotrollerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */; };
@@ -92,7 +91,6 @@
 		80727D152B279410009CD539 /* QuizEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuizEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80727D192B283BEE009CD539 /* NavigationContorllerRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContorllerRouterTest.swift; sourceTree = "<group>"; };
 		80727D1B2B283D60009CD539 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
-		809854A42B2C96DE006C21DD /* ResulteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResulteHelper.swift; sourceTree = "<group>"; };
 		80AB82A52B3C135000764803 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		80AB82A82B3C13E800764803 /* BacisScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BacisScore.swift; sourceTree = "<group>"; };
 		80D863F12B2899E8002E506C /* ViewCotrollerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCotrollerFactory.swift; sourceTree = "<group>"; };
@@ -313,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				80727CB62B220D1B009CD539 /* TableViewHelper.swift */,
-				809854A42B2C96DE006C21DD /* ResulteHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -495,7 +492,6 @@
 			files = (
 				803667012B29E8CE00E38F22 /* ResultsPresenterTest.swift in Sources */,
 				80727D1A2B283BEE009CD539 /* NavigationContorllerRouterTest.swift in Sources */,
-				809854A52B2C96DE006C21DD /* ResulteHelper.swift in Sources */,
 				80AB82A62B3C135000764803 /* ScoreTest.swift in Sources */,
 				801C48322B209BEE003E4493 /* QuestionViewControllerTest.swift in Sources */,
 				80727CB72B220D1B009CD539 /* TableViewHelper.swift in Sources */,
